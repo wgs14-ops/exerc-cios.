@@ -13,13 +13,13 @@ app.get('/sobre', (req, res) => {
 
 //exercício 3
 app.get('/contato', (req, res) => {
-  res.json({
+  res.json({buscar
     email: 'contato@gmail.com',
     telefone: '(81) 99999-9999'
   });
 });
 
-//exercício 4
+//exercício 4buscar
 app.get('/erro', (req, res) => {
   res.status(404).send('Página não encontrada');
 });
@@ -31,8 +31,15 @@ app.get('/inicio/', (req, res) => {
 
 //exercício 6
 app.get('/usuarios/:id', (req, res) => {
-  res.send('Página Sobre');
+  res.send(usuario + req.params.id); 
 });
+
+//exercício 7
+app.get('/produto/:nome', (req, res) => {
+  res.send(produto + req.params.nome); 
+});
+
+
 
 app.listen(3000, () => {
   console.log('servidor em execução');
