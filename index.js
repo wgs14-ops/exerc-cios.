@@ -46,8 +46,10 @@ app.get('/filme/:id/:nome', (req, res) => {
 
 //exercício 9
 app.get('/buscar', (req, res) => {
-  res.send('Bem-vindo ao sistema');
+    const nome = req.query.nome;
+    res.send(`Resultado da busca por: ${nome}`);
 });
+
 
 app.listen(3000, () => {
   console.log('servidor em execução');
