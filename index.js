@@ -13,7 +13,7 @@ app.get('/sobre', (req, res) => {
 
 //exercício 3
 app.get('/contato', (req, res) => {
-  res.json({buscar
+  res.json({
     email: 'contato@gmail.com',
     telefone: '(81) 99999-9999'
   });
@@ -39,7 +39,10 @@ app.get('/produto/:nome', (req, res) => {
   res.send(produto + req.params.nome); 
 });
 
-
+//exercício 8
+app.get('/filme/:id/:nome', (req, res) => {
+  res.send(filme + req.params.id + req.params.nome); 
+});
 
 app.listen(3000, () => {
   console.log('servidor em execução');
