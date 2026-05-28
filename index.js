@@ -44,6 +44,11 @@ app.get('/filme/:id/:nome', (req, res) => {
   res.send(filme + req.params.id + req.params.nome); 
 });
 
+//exercício 9
+app.get('/buscar', (req, res) => {
+  res.send('Bem-vindo ao sistema');
+});
+
 app.listen(3000, () => {
   console.log('servidor em execução');
 });
