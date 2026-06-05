@@ -55,3 +55,60 @@ app.listen(3000, () => {
   console.log('servidor em execução');
 });
 
+//exercício 10
+app.get('/produtos', (req, res) => {
+  res.send(`Categoria: ${req.query.categoria} | Página: ${req.query.pagina}`);
+});
+
+//exercicio 11
+app.get('/usuarios', (req, res) => {
+  res.send(`Filtrando usuários com idade ${req.query.idade}`);
+});
+
+//exercicio 12
+app.get('/perfil', (req, res) => {
+  res.render('perfil', {
+    nome: 'Ana',
+    idade: 17
+  });
+});
+
+//exercicio 13
+app.get('/perfil', (req, res) => {
+  res.render('perfil', {
+    nome: 'Ana',
+    idade: 17
+  });
+});
+<p>Nome: {{nome}}</p>
+<p>Idade: {{idade}}</p>
+
+//exercicio 14
+res.render('filmes', {
+  filmes: ['Avatar', 'Titanic', 'Barbie']
+});
+
+//exercicio 15
+{{#if logado}}
+<p>Usuário logado</p>
+{{else}}
+<p>Faça login</p>
+{{/if}}
+
+{{#unless admin}}
+<p>Você não é administrador</p>
+{{/unless}}
+
+//exercicio 16
+res.render('filmes', {
+  filmes: [
+    {nome:'Avatar', ano:2009},
+    {nome:'Barbie', ano:2023}
+  ]
+});
+{{#each filmes}}
+<p>{{nome}} - {{ano}}</p>
+{{/each}}
+
+//exercicio 17
+
