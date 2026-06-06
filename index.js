@@ -112,3 +112,41 @@ res.render('filmes', {
 
 //exercicio 17
 
+const videos = [
+    {
+        titulo: 'Dança do verão',
+        criador: 'Maria',
+        descricao: 'Uma dança incrível',
+        visualizacoes: 150000,
+        curtidas: 32000,
+        hashtag: 'dance',
+        urlVideo: 'https://example.com/video1',
+        thumbnail: 'https://picsum.photos/200/150?random=1'
+    },
+    {
+        titulo: 'Tutorial de culinária',
+        criador: 'Carlos',
+        descricao: 'Aprenda a cozinhar',
+        visualizacoes: 85000,
+        curtidas: 12000,
+        hashtag: 'food',
+        urlVideo: 'https://example.com/video2',
+        thumbnail: 'https://picsum.photos/200/150?random=2'
+    }
+]
+ 
+app.get('/videos', (req, res) => {
+    res.render('videos', { videos })
+})
+ 
+app.get('/videos/cadastrar', (req, res) => {
+    res.render('cadastrar')
+})
+ 
+app.post('/videos', (req, res) => {
+    const { titulo, criador, descricao, visualizacoes, curtidas, hashtag, urlVideo, thumbnail } = req.body
+    videos.push({ titulo, criador, descricao, visualizacoes, curtidas, hashtag, urlVideo, thumbnail })
+    res.redirect('/videos')
+})
+
+
